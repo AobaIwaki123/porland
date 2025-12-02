@@ -5,24 +5,16 @@ def porland(S: str):
         if c in "+-*/":
             match c:
                 case "+":
-                    ans = int(stack[-2]) + int(stack[-1])
+                    ans = stack[-2] + stack[-1]
                 case "-":
-                    ans = int(stack[-2]) - int(stack[-1])
+                    ans = stack[-2] - stack[-1]
                 case "/":
-                    ans = int(stack[-2]) / int(stack[-1])
+                    ans = stack[-2] / stack[-1]
                 case "*":
-                    ans = int(stack[-2]) * int(stack[-1])
+                    ans = stack[-2] * stack[-1]
             stack.pop(-1)
             stack.pop(-1)
             stack.append(ans)
         else:
-            stack.append(c)
+            stack.append(int(c))
     return ans
-
-def main():
-    A = "11+"
-    porland(A)
-
-
-if __name__ == "__main__":
-    main()
