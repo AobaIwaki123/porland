@@ -3,24 +3,21 @@ def porland(S: str):
     ans = 0
     for c in S:
         if c in "+-*/":
-            print("calc")
             match c:
                 case "+":
-                    ans = int(stack[-1]) + int(stack[-2])
+                    ans = int(stack[-2]) + int(stack[-1])
                 case "-":
-                    ans = int(stack[-1]) - int(stack[-2])
+                    ans = int(stack[-2]) - int(stack[-1])
                 case "/":
-                    ans = int(stack[-1]) / int(stack[-2])
+                    ans = int(stack[-2]) / int(stack[-1])
                 case "*":
-                    ans = int(stack[-1]) * int(stack[-2])
+                    ans = int(stack[-2]) * int(stack[-1])
             stack.pop(-1)
             stack.pop(-1)
+            stack.append(ans)
         else:
             stack.append(c)
-        print(stack)
-    if (len(stack) > 0):
-        raise ValueError("Stack Has Value", stack)
-    print("Answer:", ans)
+    return ans
 
 def main():
     A = "11+"

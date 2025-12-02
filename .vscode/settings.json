@@ -1,5 +1,14 @@
 {
     "github.copilot.enable": {
         "python": false
-    }
+    },
+    "python.testing.pytestArgs": [
+        "-v",
+        "--tb=short",
+        "--strict-markers",
+        "."
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "python.testing.autoTestDiscoverOnSaveEnabled": true
 }
